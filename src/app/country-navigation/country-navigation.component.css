@@ -1,0 +1,22 @@
+.navigation {
+  background-image: url('../../assets/football-updates-banner.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.navigation .countryButton {
+  display: flex;
+  justify-content: space-around;
+  padding: 1em 1.5em;
+}
+
+.navigation h1 {
+  text-align: center;
+  padding-top: 1em;
+}
+
+.standing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

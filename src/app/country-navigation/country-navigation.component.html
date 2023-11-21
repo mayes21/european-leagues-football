@@ -1,0 +1,12 @@
+<div class="navigation">
+    <h1>Football Updates</h1>
+    <div class="countryButton">
+        <button *ngFor="let country of countries" [id]="country + 'Select'" (click)="loadLeague(country)">
+            {{ country | uppercase }}
+        </button>
+    </div>
+</div>
+
+<div class="standing">
+    <router-outlet></router-outlet>
+</div>

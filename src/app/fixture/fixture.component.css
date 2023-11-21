@@ -1,0 +1,15 @@
+table {
+    border:1px black solid;
+    border-radius: 2em;
+    padding: 1em 1.5em;
+}
+
+th, td {
+    justify-content: center;
+    text-align: center;
+    padding: 1em 0.5em;
+}
+
+.logo {
+    width: 2em;
+}

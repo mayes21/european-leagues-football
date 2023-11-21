@@ -1,0 +1,28 @@
+<table border="1">
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th>Name</th>
+            <th>Games</th>
+            <th>W</th>
+            <th>L</th>
+            <th>D</th>
+            <th>Goal Difference</th>
+            <th>Points</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let team of standing">
+            <td>{{ team.rank }}</td>
+            <td><img [src]="team.logo" [alt]="team.name + ' logo'" class="logo"></td>
+            <td><a [routerLink]="['/fixture/league', id, 'team', team.id]">{{ team.name }}</a></td>
+            <td>{{ team.gamesPlayed }}</td>
+            <td>{{ team.wins }}</td>
+            <td>{{ team.losses }}</td>
+            <td>{{ team.draws }}</td>
+            <td>{{ team.goalDifference }}</td>
+            <td>{{ team.numberOfPoints }}</td>
+        </tr>
+    </tbody>
+</table>
