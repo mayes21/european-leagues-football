@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Standings, TeamModel } from '../models/standings.model';
-import { Observable, map } from 'rxjs';
+import { Observable, map, shareReplay } from 'rxjs';
 import { SeasonService } from './season.service';
 
 @Injectable({
@@ -23,6 +23,7 @@ export class StandingService {
       .set('season', this.seasonService.getCurrentSeason());
 
     return this.httpClient.get<Standings>(`${environment.API_URL}/standings`, { headers, params }).pipe(
+      shareReplay(1),
       map(data => {
         const teams: TeamModel[] = [];
         data.response[0].league.standings.forEach((standing) => {
